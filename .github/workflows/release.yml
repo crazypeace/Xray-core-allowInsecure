@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore Geodat Cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-geodat-
 
       - name: Restore Wintun Cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-wintun-
@@ -220,14 +220,14 @@ jobs:
           fi
 
       - name: Restore Geodat Cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-geodat-
 
       - name: Restore Wintun Cache
         if: matrix.goos == 'windows'
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-wintun-
