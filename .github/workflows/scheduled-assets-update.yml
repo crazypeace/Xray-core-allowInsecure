@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore Geodat Cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-geodat-
@@ -59,7 +59,7 @@ jobs:
             done
 
       - name: Save Geodat Cache
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         if: ${{ steps.update.outputs.unhit }}
         with:
           path: resources
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore Wintun Cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           path: resources
           key: xray-wintun-
@@ -122,7 +122,7 @@ jobs:
             fi
 
       - name: Save Wintun Cache
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         if: ${{ steps.update.outputs.unhit }}
         with:
           path: resources
